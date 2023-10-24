@@ -53,13 +53,14 @@ if (isset($_SESSION['doc'])) {
   <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css" />
   <link rel="stylesheet" type="text/css" href="../menu/modulo/preguntas/Lectura/css/estilos.css" />
+  <link rel="stylesheet" type="text/css" href="../menu/modulo/preguntas/matematica/css/estilos.css" />
 </head>
 
 
 <header>
   <div class="icon__menu">
     <i class="la fas fa-bars" id="btn_open"></i>
-    <img src="http://localhost/zonas/htmls/img/LOGO1.png" alt="">
+    <img src="/zonas/htmls/img/LOGO1.png" alt="">
     <div class="option">
       <a href="salir.php">
         <div class="option">
@@ -205,7 +206,7 @@ if (isset($_SESSION['doc'])) {
         } else
           if (@$_GET['mod'] == "consejos") {
 
-            require_once("modulo/consejos.php");
+            require_once("modulo/consejos/index.php");
           } else
             if (@$_GET['mod'] == "juegos") {
 
@@ -234,11 +235,11 @@ if (isset($_SESSION['doc'])) {
     <?php
     if (@$_GET['mod'] == "Lectura") {
 
-      require_once("modulo/preguntas/Lectura/index.php");
+      require_once("modulo/preguntas/Lectura/español.php");
     } else
       if (@$_GET['mod'] == "Matematicas") {
 
-        require_once("modulo/preguntas/matematica/index.php");
+        require_once("modulo/preguntas/matematica/matematicas.php");
       } else
         if (@$_GET['mod'] == "Ingles") {
 
@@ -248,6 +249,7 @@ if (isset($_SESSION['doc'])) {
     ?>
     <script src="../menu/modulo/preguntas/Lectura/js/main.js"></script>
     <script src="../menu/modulo/preguntas/Lectura/js/pasar.js"></script>
+    <script src="/zonas/htmls/menu/modulo/preguntas/matematica/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   </div>
   <?php
@@ -276,11 +278,11 @@ if (isset($_SESSION['doc'])) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="http://localhost/zonas/htmls/js/jsmenu.js"></script>
+  <script src="/zonas/htmls/js/jsmenu.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-  <script src="http://localhost/zonas/htmls/js/app1.js"></script>
-  <script src="particles.js"></script>
+
+
   <!--<script>
     window.addEventListener("beforeunload", function (e) {
       e.returnValue = "¿Estás seguro de que deseas cerrar la sesión?"; // Mensaje personalizado
