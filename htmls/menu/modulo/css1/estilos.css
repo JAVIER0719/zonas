@@ -1,0 +1,97 @@
+body{
+    background-color: rgb(190, 240, 240);
+}
+h2{
+    
+    margin: 0px;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    display: block;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+    font-family: arial;   
+}
+
+h1{
+    margin: 30px;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: block;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+    font-family: arial;  
+}
+
+.materia {
+    display: inline-block;
+    width: 300px;
+    height: 250px;
+    margin: 20px 30px;
+    border-radius: 30px;
+    border: solid 3px ; 
+    margin-top: 2%;
+  max-width: 1000px;
+  min-width: 300px;
+  min-height: 200px;
+  display: inline-block;
+
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+}
+.lalal{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+.img1 {
+    background-image: url(../img/MATEMATICAS.jpeg);
+    object-fit: cover;
+}
+
+.img2 {
+    background-image: url(../img/ESPAÑOL.jpg);
+    object-fit: cover;
+}
+
+
+.img3 {
+    background-image: url(../img/INGLES.jpg);
+    object-fit: cover;
+}
+
+
+.img4 {
+    background-image: url(../img/ciancias\ n.jpg);
+    object-fit: cover;
+}
+
+
+.img5 {
+    background-image: url(../img/sociales.jpg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+.materia:hover{
+    transform: scale(1.15);
+}
+.buttons button{
+    height:35px;
+    width:50%;
+    outline:0;
+    border:0;
+    background-color:#14c6ee;
+    border-radius:4px;
+    font-size:12px;
+    color:#000000;
+    cursor:pointer; 
+    
+ 
+}

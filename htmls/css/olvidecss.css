@@ -1,0 +1,16 @@
+body{
+    background-image: url(http://localhost/zonas/htmls/img/fondo.png);  
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.panelaa {
+    background-color: white;
+    border-radius: 5px;
+   
+    margin-top: 25%;
+    
+}
+.fa:hover{
+    
+    transform: scale(1.15);
+}

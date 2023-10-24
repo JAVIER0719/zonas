@@ -1,0 +1,36 @@
+.caja {
+    border-radius: 1%;
+    border-color: grey;
+    border-width: 4%; /* Opcional: Añade el ancho del borde */
+    border-style: solid;
+ }
+
+body {
+       
+      background: linear-gradient(white, skyblue );
+      
+      
+    }
+    .tiempo{
+      text-align: center;
+      color:white;
+      font-family: calibri;
+      justify-content: center;
+    }
+    .marco {
+      background-color: #333;
+      padding: 15px;
+      border-radius: 30px;
+      width: 20%;
+      margin-left: 72%;
+      margin-top: -8%;
+      position: fixed;
+    }
+    .botones {
+      display: flex;
+      justify-content: space-around;
+      color: white;
+    }
+    .btn {
+      display: inline-block;
+    }
