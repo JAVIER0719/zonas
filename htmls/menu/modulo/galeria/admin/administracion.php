@@ -7,14 +7,14 @@ if (!empty($_GET['id_recurso'])) {
         echo "Error: " . $stmt->error;
     }
     if ($stmt->execute()) {
-        echo '<div class="alert alert-success">Persona eliminada correctamente</div>';
+        echo '<div class="alert alert-success">Imagen eliminada correctamente</div>';
         echo '<script>
         setTimeout(function() {
             window.location.href = "http://localhost/zonas/htmls/menu/dashboard.php?mod=Admin";
         }, 3000); 
       </script>';
     } else {
-        echo '<div class="alert alert-danger">Persona no se pudo eliminadar correctamente</div>';
+        echo '<div class="alert alert-danger">Imagen no se pudo eliminadar correctamente</div>';
         echo '<script>
         setTimeout(function() {
             window.location.href = "http://localhost/zonas/htmls/menu/dashboard.php?mod=Admin";

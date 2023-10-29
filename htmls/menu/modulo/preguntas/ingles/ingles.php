@@ -1,6 +1,6 @@
 <?php
 include("db.php");
-$query = "SELECT * FROM `matematicas`;";
+$query = "SELECT * FROM `ingles`;";
 $resultado = $conn->query($query);
 if (
   $_SERVER['REQUEST_METHOD'] === 'POST' &&
@@ -72,12 +72,12 @@ if (
     <?php
     if ($fkRol == 12) {
       ?>
-      <a href="dashboard.php?mod=crud-mat">scrud_matematicas</a>
+      <a href="dashboard.php?mod=crud-ing">scrud_ingles</a>
       <?php
     }
     ;
     ?>
-    <form action="http://localhost/zonas/htmls/menu/dashboard.php?mod=Matematicas" method="post">
+    <form action="http://localhost/zonas/htmls/menu/dashboard.php?mod=Ingles" method="post">
       <div class="input-container">
         <label for="tiempo">Tiempo transcurrido:</label>
         <input type="text" name="tiempo" id="tiempo" readonly />
@@ -101,39 +101,34 @@ if (
             <ol type="A">
               <p class="parrafo">
                 <b>
-                  <?= $fila->id1 ?>
-                  <?= $fila->texto3 ?>
+                  <?= $fila->numero_pregunta ?>
+                  <img height="150px" src="data:image/jpeg;base64,<?= base64_encode($fila->texto) ?>"
+                    alt="<?= $fila->texto ?>" />
                 </b>
               </p>
               <br />
               <p class="parrafo">
                 <b>
-                  <?= $fila->pregunta3 ?>
+                  <?= $fila->pregunta ?>
                 </b>
               </p>
               <li>
                 <?= $contador ?>
                 <input type="radio" name="<?= $nombre ?>" id="<?= $contador + 4 ?>" />
-                <?= $fila->a3 ?>
+                <?= $fila->punto_correcto ?>
 
               </li>
               <li>
                 <?= $contador1 ?>
                 <input type="radio" name="<?= $nombre ?>" id="<?= $contador1 + 5 ?>" />
-                <?= $fila->b3 ?>
+                <?= $fila->punto ?>
 
               </li>
               <li>
                 <?= $contador2 ?>
                 <input type="radio" name="<?= $nombre ?>" id="<?= $contador2 + 6 ?>" />
-                <?= $fila->c3 ?>
+                <?= $fila->punto2 ?>
 
-              </li>
-
-              <li>
-                <?= $contador3 ?>
-                <input type="radio" name="<?= $nombre ?>" id="<?= $contador3 + 7 ?>" />
-                <?= $fila->d3 ?>
               </li>
             </ol>
           </div>

@@ -9,7 +9,7 @@ body{
 
 section{
     
-    margin: 7%;
+    margin: 10%;
     
 }
 
@@ -21,7 +21,7 @@ section{
     color: #000000;
     text-align: center;
     font-weight: 500;
-    margin-bottom: px;
+    
     
    
 }
@@ -59,7 +59,7 @@ section{
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 20px;
+    padding: 30px;
 	overflow:hidden;
 	color:#000000;
 	top:0;
@@ -80,6 +80,7 @@ section{
 .img-responsive{
     width: 360px;
     height: 220px;
+
     
    
 }

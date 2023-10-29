@@ -76,7 +76,7 @@
           <img src="/zonas/htmls/menu/modulo/juegos/img/pac%20man.png" alt="" class="img-fluid card-img-top" />
           <div class="p-4">
             <h5>
-              <a href="https://www.1001juegos.com/juego/google-pacman" class="text-dark">PAC MAN</a>
+              <a href="https://www.google.com/logos/2010/pacman10-i.html" class="text-dark">PAC MAN</a>
             </h5>
             <p class="small text-muted mb-0">
               Pac Man es un videojuego arcade creado por el diseñador de

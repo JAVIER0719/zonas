@@ -8,14 +8,15 @@
     text-align: left;
     font-family: Arial Black;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 50px;
     color: #fff;
+    
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 
   }
 </style>
-<br />
-<br />
+
+
 <br />
 <br />
 <br />

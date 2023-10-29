@@ -62,12 +62,8 @@ if (isset($_SESSION['doc'])) {
     <i class="la fas fa-bars" id="btn_open"></i>
     <img src="/zonas/htmls/img/LOGO1.png" alt="">
     <div class="option">
-      <a href="salir.php">
-        <div class="option">
-          <i class="fa-solid fa-right-from-bracket" title="Nosotros"></i>
 
-        </div>
-        </dic>
+
     </div>
 
 </header>
@@ -103,19 +99,7 @@ if (isset($_SESSION['doc'])) {
           <h4>Materias</h4>
         </div>
       </a>
-      <?php
 
-      if ($fkRol == 12) {
-        ?>
-        <a href="dashboard.php?mod=pruebasplus">
-          <div class="option">
-            <i class="fas fa-calendar-plus" title="Cursos"></i>
-            <h4>Pruebas plus</h4>
-          </div>
-        </a>
-        <?php
-      }
-      ?>
 
       <a href="dashboard.php?mod=juegos">
         <div class="option">
@@ -176,6 +160,12 @@ if (isset($_SESSION['doc'])) {
         </div>
       </a>
       </a>
+      <a href="salir.php">
+        <div class="option">
+          <i class="fa-solid fa-right-from-bracket" title="Nosotros"></i>
+          <h4>Salir</h4>
+        </div>
+      </a>
       <a href="#">
         <div class="option">
           <i class="fa-solid fa-gear" title="Nosotros"></i>
@@ -226,10 +216,7 @@ if (isset($_SESSION['doc'])) {
                     require_once("modulo/galeria/galeria.php");
 
                   }
-  if (@$_GET['mod'] == "pruebasplus") {
 
-    require_once("modulo/preguntas/preicfes/crudpregu.php");
-  }
   ?>
   <div class="mover">
     <?php
@@ -243,8 +230,16 @@ if (isset($_SESSION['doc'])) {
       } else
         if (@$_GET['mod'] == "Ingles") {
 
-          require_once("modulo/preguntas/ingles/index.php");
+          require_once("modulo/preguntas/ingles/ingles.php");
         } else
+          if (@$_GET['mod'] == "Sociales") {
+
+            require_once("modulo/preguntas/sociales/sociales.php");
+          } else
+            if (@$_GET['mod'] == "Ciencias") {
+
+              require_once("modulo/preguntas/ciencias/ciencias.php");
+            } else
 
     ?>
     <script src="../menu/modulo/preguntas/Lectura/js/main.js"></script>
@@ -253,22 +248,33 @@ if (isset($_SESSION['doc'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   </div>
   <?php
+  if (@$_GET['mod'] == "crud-mat") {
+    require_once("modulo/preguntas/matematica/preicfes/crud-mat.php");
+  } else
+    if (@$_GET['mod'] == "crud-soc") {
+      require_once("modulo/preguntas/sociales/preicfes/crud-soc.php");
+    } else
+      if (@$_GET['mod'] == "crud-cie") {
+        require_once("modulo/preguntas/ciencias/preicfes/crud-cie.php");
+      } else
+        if (@$_GET['mod'] == "crud-ing") {
+          require_once("modulo/preguntas/ingles/preicfes/crud-ing.php");
+        } else
 
 
+          if ($fkRol == 12) {
 
-  if ($fkRol == 12) {
+            if (@$_GET['mod'] == "user") {
 
-    if (@$_GET['mod'] == "user") {
+              require_once("modulo/administracion/user.php");
+            }
+            if (@$_GET['mod'] == "Admin") {
 
-      require_once("modulo/administracion/user.php");
-    }
-    if (@$_GET['mod'] == "Admin") {
-
-      require_once("modulo/galeria/admin/administracion.php");
-    }
+              require_once("modulo/galeria/admin/administracion.php");
+            }
 
 
-  }
+          }
 
 
 
