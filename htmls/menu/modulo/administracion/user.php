@@ -52,10 +52,10 @@ if (!empty($_GET['id'])) {
 <body>
 	<div class="container">
 		<div class="table-wrapper">
-			<div class="table-title">
+			<div class="table-title" style="margin-left:60px;">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Tabla <b>Administracion</b></h2>
+						<h2>Tabla <b>Administracion de Estudiantes</b></h2>
 					</div>
 					<?php
 
@@ -229,28 +229,23 @@ if (!empty($_GET['id'])) {
 				</div>
 			</div>
 
-			<table class="table table-striped table-hover">
+			<table class="table table-striped table-hover" style="margin-left:50px;">
 
 				<thead>
 					<tr>
-						<th>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="selectAll">
-								<label for="selectAll"></label>
-							</span>
-						</th>
-						<th>documento</th>
-						<th>correo</th>
-						<th>nombre1</th>
-						<th>nombre2</th>
+
+						<th>Documento</th>
+						<th>Correo</th>
+						<th>Nombre1</th>
+						<th>Nombre2</th>
 						<th>P-apellido</th>
 						<th>S-apelliod2</th>
 						<th>clave</th>
 						<th>N-cel</th>
-						<th>tipo de documento</th>
-						<th>grado</th>
-						<th>rol</th>
-						<th>editar</th>
+						<th>Tipo de documento</th>
+						<th>Grado</th>
+						<th>Rol</th>
+						<th>Editar</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -258,12 +253,7 @@ if (!empty($_GET['id'])) {
 					$sql = $conn->query("SELECT * FROM usuario");
 					while ($datos = $sql->fetch_object()) { ?>
 						<tr>
-							<td>
-								<span class="custom-checkbox">
-									<input type="checkbox" id="checkbox1" name="options[]" value="1">
-									<label for="checkbox1"></label>
-								</span>
-							</td>
+
 							<td>
 								<?= $datos->doc ?>
 							</td>

@@ -20,12 +20,6 @@ include("db.php");
                 <h1 class="gallery-title">Galería</h1>
             </div>
 
-            <div align="center">
-                <button class="filter-button" data-filter="all">Todo</button>
-                <button class="filter-button" data-filter="category1">Pinturas</button>
-                <button class="filter-button" data-filter="category2">fotografias</button>
-                <button class="filter-button" data-filter="category3">Videos</button>
-            </div>
 
             <br />
             <?php

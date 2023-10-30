@@ -49,9 +49,6 @@ if (isset($_SESSION['doc'])) {
   <title>Zona del saber</title>
   <link rel="stylesheet" type="text/css" href="estilos.css" />
   <link rel="stylesheet" type="text/css" href="/zonas/htmls/css/estimenu.css" />
-
-  <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css" />
   <link rel="stylesheet" type="text/css" href="../menu/modulo/preguntas/Lectura/css/estilos.css" />
   <link rel="stylesheet" type="text/css" href="../menu/modulo/preguntas/matematica/css/estilos.css" />
 </head>
@@ -71,7 +68,6 @@ if (isset($_SESSION['doc'])) {
 <body id="body">
 
   <div class="menu__side" id="menu_side">
-    <div id="particles-js"> </div>
     <div class="name__page">
 
       </a>
@@ -172,7 +168,8 @@ if (isset($_SESSION['doc'])) {
           <h4>Configuración</h4>
         </div>
       </a>
-
+      <br />
+      <br />
     </div>
 
   </div>
@@ -194,28 +191,28 @@ if (isset($_SESSION['doc'])) {
 
           require_once("modulo/libros.php");
         } else
-          if (@$_GET['mod'] == "consejos") {
 
-            require_once("modulo/consejos/index.php");
+          if (@$_GET['mod'] == "juegos") {
+
+            require_once("modulo/juegos/juegos.php");
           } else
-            if (@$_GET['mod'] == "juegos") {
+            if (@$_GET['mod'] == "pruebas") {
 
-              require_once("modulo/juegos/juegos.php");
+              require_once("modulo/pruebas.php");
             } else
-              if (@$_GET['mod'] == "pruebas") {
+              if (@$_GET['mod'] == "perfil") {
 
-                require_once("modulo/pruebas.php");
+                require_once("modulo/perfil.php");
               } else
-                if (@$_GET['mod'] == "perfil") {
 
-                  require_once("modulo/perfil.php");
-                } else
+                if (@$_GET['mod'] == "galeria") {
 
-                  if (@$_GET['mod'] == "galeria") {
+                  require_once("modulo/galeria/galeria.php");
 
-                    require_once("modulo/galeria/galeria.php");
+                }
 
-                  }
+
+
 
   ?>
   <div class="mover">
@@ -240,12 +237,24 @@ if (isset($_SESSION['doc'])) {
 
               require_once("modulo/preguntas/ciencias/ciencias.php");
             } else
+              if (@$_GET['mod'] == "consejos") {
+
+                require_once("modulo/consejos/index.php");
+              } else
 
     ?>
     <script src="../menu/modulo/preguntas/Lectura/js/main.js"></script>
-    <script src="../menu/modulo/preguntas/Lectura/js/pasar.js"></script>
-    <script src="/zonas/htmls/menu/modulo/preguntas/matematica/js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
   </div>
   <?php
   if (@$_GET['mod'] == "crud-mat") {
@@ -260,21 +269,24 @@ if (isset($_SESSION['doc'])) {
         if (@$_GET['mod'] == "crud-ing") {
           require_once("modulo/preguntas/ingles/preicfes/crud-ing.php");
         } else
+          if (@$_GET['mod'] == "crud-esp") {
+            require_once("modulo/preguntas/Lectura/preicfes/crud-esp.php");
+          } else
 
 
-          if ($fkRol == 12) {
+            if ($fkRol == 12) {
 
-            if (@$_GET['mod'] == "user") {
+              if (@$_GET['mod'] == "user") {
 
-              require_once("modulo/administracion/user.php");
+                require_once("modulo/administracion/user.php");
+              }
+              if (@$_GET['mod'] == "Admin") {
+
+                require_once("modulo/galeria/admin/administracion.php");
+              }
+
+
             }
-            if (@$_GET['mod'] == "Admin") {
-
-              require_once("modulo/galeria/admin/administracion.php");
-            }
-
-
-          }
 
 
 
@@ -288,6 +300,7 @@ if (isset($_SESSION['doc'])) {
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
+  <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 
   <!--<script>
     window.addEventListener("beforeunload", function (e) {

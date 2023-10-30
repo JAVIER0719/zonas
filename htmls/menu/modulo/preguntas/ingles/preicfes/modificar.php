@@ -29,19 +29,23 @@ $query = $conn->query("SELECT * FROM ingles WHERE numero_pregunta=$id");
             <div class="row-5">
 
                 <main>
-                    <form method="post" action="controlador/controlar.php">
+                    <form method="post" action="controlador/controlar.php" enctype="multipart/form-data">
                         <h1>Modificar<b> materia de ingles</b></h1>
                         <input type="hidden" name="id" class="form-control" value="<?= $_GET['id'] ?>">
                         <?php
                         while ($dato = $query->fetch_object()) { ?>
                             <br />
-                            <div class="form-group">
-                                <label for="archivo" id="archivo-label" class="btn btn-primary">Seleccionar Archivo</label>
-                                <input type="file" name="archivo" class="form-control" id="archivo" style="display: none;">
+                            <div class=" form-group">
 
+                                <input type="file" name="archivo" class="form-control">
+                                <span id="nombre-archivo"></span>
                             </div>
                             <br />
                             <div class="modal-body">
+                                <div class="form-group">
+                                    <label>texto</label>
+                                    <input type="text" name="text" class="form-control" value="<?= $dato->texto ?>">
+                                </div>
                                 <div class="form-group">
                                     <label>pregunta</label>
                                     <input type="text" name="pregun" class="form-control" value="<?= $dato->pregunta ?>">

@@ -14,14 +14,14 @@ if (!empty($_GET['id'])) {
         echo '<div class="alert alert-success">pregunta eliminada correctamente</div>';
         echo '<script>
         setTimeout(function() {
-            window.location.href = "http://localhost/zonas/htmls/menu/dashboard.php?mod=crud-soc";
+            window.location.href = "http://localhost/zonas/htmls/menu/dashboard.php?mod=crud-cie";
         }, 3000); 
       </script>';
     } else {
         echo '<div class="alert alert-danger">pregunta no se pudo eliminadar correctamente</div>';
         echo '<script>
         setTimeout(function() {
-            window.location.href = "http://localhost/zonas/htmls/menu/dashboard.php?mod=crud-soc";
+            window.location.href = "http://localhost/zonas/htmls/menu/dashboard.php?mod=crud-cie";
         }, 3000); 
       </script>';
     }
@@ -60,96 +60,99 @@ if (!empty($_GET['id'])) {
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-8">
-                            <h2>CRUD <b>Pruebas</b></h2>
+                            <h2>CRUD <b>Materia de Ciencias</b></h2>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="search-box">
-                                <i class="material-icons">&#xE8B6;</i>
-                                <input type="text" class="form-control" placeholder="Search&hellip;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <table class="table table-striped table-hover table-bordered">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>texto <i class="fa fa-sort"></i></th>
-                            <th>Preguntas</th>
-                            <th>Respuesta A<i class="fa fa-sort"></i></th>
-                            <th>Respuesta A</th>
-                            <th>Respuesta A<i class="fa fa-sort"></i></th>
-                            <th>Respuesta A</th>
-                            <th>Materia</th>
-                            <th>Quien la puso</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        while ($fila = $resultado->fetch_object()) {
-                            ?>
 
+                    </div>
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
                             <tr>
-                                <td>
-                                    <?= $fila->numero_pregunta1 ?>
-                                </td>
-                                <td>
-                                    <?= $fila->texto1 ?>
-                                </td>
-                                <td>
-                                    <?= $fila->pregunta1 ?>
-                                </td>
-                                <td>
-                                    <?= $fila->a ?>
-                                </td>
-                                <td>
-                                    <?= $fila->b ?>
-                                </td>
-                                <td>
-                                    <?= $fila->c ?>
-                                </td>
-                                <td>
-                                    <?= $fila->d ?>
-                                </td>
-                                <td>
-                                    <?= $fila->fk_mat ?>
-                                </td>
-                                <td>
-                                    <?= $fila->fk_usu2 ?>
-                                </td>
-                                <td>
-                                    <a href="modulo/preguntas/ciencias/preicfes/modificar.php?id=<?= $fila->numero_pregunta1 ?>"
-                                        class="view" title="View" data-toggle="tooltip"><i
-                                            class="material-icons">&#xE417;</i></a>
-                                    <a href="modulo/preguntas/ciencias/preicfes/agg/agregar.php" class="edit" title="Edit"
-                                        data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                    <a href="modulo/preguntas/ciencias/preicfes/crud-cie.php?id=<?= $fila->numero_pregunta1 ?>"
-                                        class="delete" title="Delete" data-toggle="tooltip"><i
-                                            class="material-icons">&#xE872;</i></a>
-                                </td>
+                                <th>#</th>
+                                <th>Texto </th>
+                                <th>Imagen </th>
+                                <th>Preguntas</th>
+                                <th>Respuesta A</th>
+                                <th>Respuesta B</th>
+                                <th>Respuesta C</th>
+                                <th>Respuesta D</th>
+                                <th>Materia</th>
+                                <th>Quien la puso</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <?php
-                        }
-                        ;
-                        ?>
-                    </tbody>
-                </table>
-                <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                    <ul class="pagination">
-                        <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a>
-                        </li>
-                    </ul>
+                            while ($fila = $resultado->fetch_object()) {
+                                $imageData = $fila->img2;
+                                $base64Image = base64_encode($imageData);
+                                ?>
+
+                                <tr>
+                                    <td>
+                                        <?= $fila->numero_pregunta1 ?>
+                                    </td>
+
+                                    <td>
+                                        <?= $fila->texto1 ?>
+                                    </td>
+                                    <td>
+                                        <img height="50px" src="data:image/jpeg;base64,<?= $base64Image ?>"
+                                            alt="<?= $base64Image ?>" />
+                                    </td>
+                                    <td>
+                                        <?= $fila->pregunta1 ?>
+                                    </td>
+                                    <td>
+                                        <?= $fila->a ?>
+                                    </td>
+                                    <td>
+                                        <?= $fila->b ?>
+                                    </td>
+                                    <td>
+                                        <?= $fila->c ?>
+                                    </td>
+                                    <td>
+                                        <?= $fila->d ?>
+                                    </td>
+                                    <td>
+                                        <?= $fila->fk_mat ?>
+                                    </td>
+                                    <td>
+                                        <?= $fila->fk_usu2 ?>
+                                    </td>
+                                    <td>
+                                        <a href="modulo/preguntas/ciencias/preicfes/modificar.php?id=<?= $fila->numero_pregunta1 ?>"
+                                            class="view" title="View" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE417;</i></a>
+                                        <a href="modulo/preguntas/ciencias/preicfes/agg/agregar.php" class="edit"
+                                            title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                        <a href="modulo/preguntas/ciencias/preicfes/crud-cie.php?id=<?= $fila->numero_pregunta1 ?>"
+                                            class="delete" title="Delete" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE872;</i></a>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                            ;
+                            ?>
+                        </tbody>
+                    </table>
+                    <div class="clearfix">
+                        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                        <ul class="pagination">
+                            <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                            <li class="page-item"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                            <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                            <li class="page-item"><a href="#" class="page-link">4</a></li>
+                            <li class="page-item"><a href="#" class="page-link">5</a></li>
+                            <li class="page-item"><a href="#" class="page-link"><i
+                                        class="fa fa-angle-double-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <center>
         <p>&copy; Zona del saber

@@ -47,7 +47,7 @@ section{
     
 	padding:0;
 	position:relative;
-    border: 2px solid #000000;
+    border: 1px solid #000000;
     display: grid;
 
     grid-auto-rows: auto;

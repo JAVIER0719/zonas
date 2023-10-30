@@ -35,7 +35,7 @@ if ($result->num_rows > 0) {
     <center>
       <h1 class="fa fa-trophy">ranking</h1>
     </center>
-    <table border="1">
+    <table border="1" style="margin-left:90px;">
       <thead>
         <tr>
           <th>*</th>
@@ -56,7 +56,7 @@ if ($result->num_rows > 0) {
         $contador = 0;
 
         while ($contador < 3 && ($row = $result->fetch_assoc())) {
-          #if ($row["nota"] >= 15 && $row["nota"] <= 21) {
+          if ($row["nota"] >= 15 && $row["nota"] <= 21) {
 
             ;
             ?>
@@ -93,7 +93,7 @@ if ($result->num_rows > 0) {
 
             <?php
             $num++;
-         # }
+          }
 
         }
         ?>

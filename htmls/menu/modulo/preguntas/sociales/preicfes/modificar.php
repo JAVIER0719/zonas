@@ -29,12 +29,18 @@ $query = $conn->query("SELECT * FROM sociales WHERE numero_pregunta3=$id");
             <div class="row-5">
 
                 <main>
-                    <form method="post" action="controlador/controlar.php">
+                    <form method="post" action="controlador/controlar.php" enctype="multipart/form-data">
                         <h1>Modificar<b> materia de sociales</b></h1>
                         <input type="hidden" name="id" class="form-control" value="<?= $_GET['id'] ?>">
                         <?php
                         while ($dato = $query->fetch_object()) { ?>
+                            <br />
+                            <div class=" form-group">
 
+                                <input type="file" name="archivo" class="form-control">
+                                <span id="nombre-archivo"></span>
+                            </div>
+                            <br />
                             <div class="form-group">
                                 <label>texto</label>
                                 <input type="text" name="text" class="form-control" value="<?= $dato->texto4 ?>">

@@ -86,7 +86,7 @@ if (
                 Iniciar
             </button>
             <input type="hidden" id="" placeholder="ingresa su documento" name="doc" value="<?php echo $doc; ?>" />
-            <input type="hidden" id="" placeholder="el numero que corresponde" name="id" value="1" />
+            <input type="hidden" id="" placeholder="el numero que corresponde" name="id" value="3" />
             <!--pregunta 1-->
             <?php
             if ($resultado) {

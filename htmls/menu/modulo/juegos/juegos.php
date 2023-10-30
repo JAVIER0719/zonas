@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-left:55px;">
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
         <div class="bg-white rounded shadow-sm">
           <img src="/zonas/htmls/menu/modulo/juegos/img/sudokuu.jpg" alt="" class="img-fluid card-img-top" />

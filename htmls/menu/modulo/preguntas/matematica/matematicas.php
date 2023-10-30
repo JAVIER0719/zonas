@@ -96,13 +96,18 @@ if (
         $contador3 = 4;
         $nombre = 1;
         while ($fila = $resultado->fetch_object()) {
+          $imageData = $fila->img;
+          $base64Image = base64_encode($imageData);
           ?>
           <div class="caja">
             <ol type="A">
               <p class="parrafo">
                 <b>
-                  <?= $fila->id1 ?>
+
+
                   <?= $fila->texto3 ?>
+                  <img height="150px" src="data:image/jpeg;base64,<?= $base64Image ?>" alt="<?= $base64Image ?>" />
+
                 </b>
               </p>
               <br />

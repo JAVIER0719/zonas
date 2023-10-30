@@ -86,7 +86,7 @@ if (
         Iniciar
       </button>
       <input type="hidden" id="" placeholder="ingresa su documento" name="doc" value="<?php echo $doc; ?>" />
-      <input type="hidden" id="" placeholder="el numero que corresponde" name="id" value="1" />
+      <input type="hidden" id="" placeholder="el numero que corresponde" name="id" value="5" />
       <!--pregunta 1-->
       <?php
       if ($resultado) {
@@ -96,14 +96,17 @@ if (
         $contador3 = 4;
         $nombre = 1;
         while ($fila = $resultado->fetch_object()) {
+          $imageData = $fila->img;
+          $base64Image = base64_encode($imageData);
           ?>
           <div class="caja">
             <ol type="A">
               <p class="parrafo">
                 <b>
                   <?= $fila->numero_pregunta ?>
-                  <img height="150px" src="data:image/jpeg;base64,<?= base64_encode($fila->texto) ?>"
-                    alt="<?= $fila->texto ?>" />
+                  <img height="150px" src="data:image/jpeg;base64,<?= $base64Image ?>" alt="<?= $base64Image ?>" />
+
+                  <?= $fila->texto ?>
                 </b>
               </p>
               <br />
@@ -156,7 +159,7 @@ if (
     </form>
   </main>
 
-  <script src="/zonas/htmls/menu/modulo/preguntas/matematica/js/mate.js"></script>
+  <script src="/htmls/menu/modulo/preguntas/ingles/js/ingles.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>

@@ -60,26 +60,22 @@ if (!empty($_GET['id'])) {
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-8">
-                            <h2>CRUD <b>Pruebas</b></h2>
+                            <h2>CRUD <b>Materia de Matematicas</b></h2>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="search-box">
-                                <i class="material-icons">&#xE8B6;</i>
-                                <input type="text" class="form-control" placeholder="Search&hellip;">
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <table class="table table-striped table-hover table-bordered">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>texto <i class="fa fa-sort"></i></th>
+                            <th>Texto </th>
+                            <th>Imagen </th>
                             <th>Preguntas</th>
-                            <th>Respuesta A<i class="fa fa-sort"></i></th>
                             <th>Respuesta A</th>
-                            <th>Respuesta A<i class="fa fa-sort"></i></th>
-                            <th>Respuesta A</th>
+                            <th>Respuesta B</th>
+                            <th>Respuesta C</th>
+                            <th>Respuesta D</th>
                             <th>Materia</th>
                             <th>Quien la puso</th>
                         </tr>
@@ -87,6 +83,8 @@ if (!empty($_GET['id'])) {
                     <tbody>
                         <?php
                         while ($fila = $resultado->fetch_object()) {
+                            $imageData = $fila->img;
+                            $base64Image = base64_encode($imageData);
                             ?>
 
                             <tr>
@@ -95,6 +93,10 @@ if (!empty($_GET['id'])) {
                                 </td>
                                 <td>
                                     <?= $fila->texto3 ?>
+                                </td>
+                                <td>
+                                    <img height="150px" src="data:image/jpeg;base64,<?= $base64Image ?>"
+                                        alt="<?= $base64Image ?>" />
                                 </td>
                                 <td>
                                     <?= $fila->pregunta3 ?>

@@ -86,7 +86,7 @@ if (
                 Iniciar
             </button>
             <input type="hidden" id="" placeholder="ingresa su documento" name="doc" value="<?php echo $doc; ?>" />
-            <input type="hidden" id="" placeholder="el numero que corresponde" name="id" value="1" />
+            <input type="hidden" id="" placeholder="el numero que corresponde" name="id" value="4" />
             <!--pregunta 1-->
             <?php
             if ($resultado) {
@@ -96,13 +96,18 @@ if (
                 $contador3 = 4;
                 $nombre = 1;
                 while ($fila = $resultado->fetch_object()) {
+                    $imageData = $fila->img2;
+                    $base64Image = base64_encode($imageData);
                     ?>
                     <div class="caja">
                         <ol type="A">
                             <p class="parrafo">
                                 <b>
-                                    <?= $fila->numero_pregunta1 ?>
+
                                     <?= $fila->texto1 ?>
+                                    <img height="150px" src="data:image/jpeg;base64,<?= $base64Image ?>"
+                                        alt="<?= $base64Image ?>" />
+
                                 </b>
                             </p>
                             <br />

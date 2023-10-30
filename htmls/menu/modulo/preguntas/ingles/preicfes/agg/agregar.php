@@ -27,23 +27,24 @@ include('db.php');
             <div class="row-5">
 
                 <main>
-                    <form method="post" action="agregar.php">
+                    <form method="post" action="agregar.php" enctype="multipart/form-data">
                         <h1>Agregar<b> materia de sociales</b></h1>
                         <?php
                         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enviar'])) {
                             // Recupera los datos del formulario
                             $texto = $_POST["text"];
+                            $archivo = addslashes(file_get_contents($_FILES['archivo']['tmp_name']));
                             $pregunta = $_POST["pregun"];
                             $a = $_POST["a"];
                             $b = $_POST["b"];
                             $c = $_POST["c"];
-                            $d = $_POST["d"];
+
                             $mat = $_POST["mat"];
                             $doc = $_POST["doc"];
 
 
-                            $sql = "INSERT INTO `ingles` (`numero_pregunta`, `texto`, `pregunta`, `punto_correcto`, `punto`, `puntob`, `fk_materia`, `fk_usu1`)
-                             VALUES (NULL,'$texto','$pregunta','$a','$b','$c','$d',$mat,$doc)";
+                            $sql = "INSERT INTO `ingles` (`numero_pregunta`,`img`, `texto`, `pregunta`, `punto_correcto`, `punto`, `punto2`, `fk_materia`, `fk_usu1`)
+                             VALUES (NULL,'$archivo','$texto','$pregunta','$a','$b','$c',$mat,$doc)";
 
                             // Ejecuta la consulta SQL
                             if (mysqli_query($conn, $sql)) {
@@ -74,13 +75,18 @@ include('db.php');
 
 
                         <br />
-                        <div class="form-group">
-                            <label for="archivo" id="archivo-label" class="btn btn-primary">Seleccionar Archivo</label>
-                            <input type="file" name="archivo" class="form-control" id="archivo" style="display: none;">
+                        <div class=" form-group">
 
+                            <input type="file" name="archivo" class="form-control">
+                            <span id="nombre-archivo">No se ha seleccionado un archivo.</span>
                         </div>
                         <br />
+
                         <div class="modal-body">
+                            <div class="form-group">
+                                <label>texto</label>
+                                <input type="text" name="text" class="form-control" value="">
+                            </div>
                             <div class="form-group">
                                 <label>pregunta</label>
                                 <input type="text" name="pregun" class="form-control" value="">
@@ -97,10 +103,7 @@ include('db.php');
                                 <label>Opcion C</label>
                                 <input type="text" name="c" class="form-control" value="">
                             </div>
-                            <div class="form-group">
-                                <label>Opcion D</label>
-                                <input type="text" name="d" class="form-control" value="">
-                            </div>
+
                             <div class="form-group">
                                 <label>¿De que materia pertenece?</label>
                                 <input type="number" name="mat" class="form-control" value="">
