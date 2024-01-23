@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $usuario = "root";
-$passwor = "0719";
+$passwor = "";
 $db = "zonadelsaber";
 
 //crear conexion con nuestra base de datos

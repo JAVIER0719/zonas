@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $usuario = "root";
-$passwwor = "0719";
+$passwwor = "";
 $db = "zonadelsaber";
 
 

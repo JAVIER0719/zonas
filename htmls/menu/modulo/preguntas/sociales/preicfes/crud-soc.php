@@ -73,9 +73,9 @@ if (!empty($_GET['id'])) {
                             <th>img </th>
                             <th>Preguntas</th>
                             <th>Respuesta A</th>
-                            <th>Respuesta A</th>
-                            <th>Respuesta A</th>
-                            <th>Respuesta A</th>
+                            <th>Respuesta B</th>
+                            <th>Respuesta C</th>
+                            <th>Respuesta D</th>
                             <th>Materia</th>
                             <th>Quien la puso</th>
                         </tr>

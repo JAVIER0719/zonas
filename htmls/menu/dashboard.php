@@ -51,17 +51,18 @@ if (isset($_SESSION['doc'])) {
   <link rel="stylesheet" type="text/css" href="/zonas/htmls/css/estimenu.css" />
   <link rel="stylesheet" type="text/css" href="../menu/modulo/preguntas/Lectura/css/estilos.css" />
   <link rel="stylesheet" type="text/css" href="../menu/modulo/preguntas/matematica/css/estilos.css" />
+  <link rel="icon" href="http://localhost/zonas/htmls/img/logo.png" type="image/png" sizes="100x100">
 </head>
 
 
 <header>
-  <div class="icon__menu">
+  <div class=" icon__menu">
     <i class="la fas fa-bars" id="btn_open"></i>
     <img src="/zonas/htmls/img/LOGO1.png" alt="">
     <div class="option">
-
-
     </div>
+
+  </div>
 
 </header>
 
@@ -123,7 +124,7 @@ if (isset($_SESSION['doc'])) {
         <a href="dashboard.php?mod=Admin">
           <div class="option">
             <i class="fa-solid fa-palette"></i>
-            <h4>Administracion</h4>
+            <h4>Biblioteca</h4>
           </div>
         </a>
         <?php
@@ -142,7 +143,7 @@ if (isset($_SESSION['doc'])) {
         <a href="dashboard.php?mod=user">
           <div class="option">
             <i class="fa-solid fa-user-plus" title="Nosotros"></i>
-            <h4>Usuario</h4>
+            <h4>Administracion de usuario</h4>
           </div>
         </a>
         <?php
@@ -168,6 +169,7 @@ if (isset($_SESSION['doc'])) {
           <h4>Configuración</h4>
         </div>
       </a>
+    
       <br />
       <br />
     </div>

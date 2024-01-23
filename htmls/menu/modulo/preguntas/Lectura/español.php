@@ -66,7 +66,7 @@ if (
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 </head>
 
-<body>
+<body style="background: linear-gradient(white, skyblue);">
 
   <main>
     <?php
@@ -117,26 +117,26 @@ if (
                 </b>
               </p>
               <li>
-                <?= $contador ?>
+
                 <input type="radio" name="<?= $nombre ?>" id="<?= $contador + 4 ?>" />
                 <?= $fila->a2 ?>
 
               </li>
               <li>
-                <?= $contador1 ?>
+
                 <input type="radio" name="<?= $nombre ?>" id="<?= $contador1 + 5 ?>" />
                 <?= $fila->b2 ?>
 
               </li>
               <li>
-                <?= $contador2 ?>
+
                 <input type="radio" name="<?= $nombre ?>" id="<?= $contador2 + 6 ?>" />
                 <?= $fila->c2 ?>
 
               </li>
 
               <li>
-                <?= $contador3 ?>
+
                 <input type="radio" name="<?= $nombre ?>" id="<?= $contador3 + 7 ?>" />
                 <?= $fila->d2 ?>
               </li>
