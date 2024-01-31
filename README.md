@@ -1,1 +1,1 @@
-practica de pruebas icfes
+Desarrollé una aplicación que proporciona conocimientos y fundamentos sólidos para preparar las pruebas ICFES en Colombia. Este proyecto representó mi primera experiencia como líder en el SENA, donde trabajé arduamente para crear una herramienta efectiva y útil para los estudiantes que se enfrentan a este importante desafío educativo
